@@ -2,8 +2,10 @@ version: 1.0
 runtime: nodejs18
 build:
   commands:
-    - yum install -y docker
-    - service docker start
-    - docker compose --env-file ./.env -f docker/docker-compose.build.yml build
+    build:
+      - yum install -y docker
+      - service docker start
+      - docker compose --env-file ./.env -f docker/docker-compose.build.yml build
 
-startCommand: docker compose --env-file ./.env -f docker/docker-compose.build.yml up -d
+run:
+  command: docker compose --env-file ./.env -f docker/docker-compose.build.yml up -d
