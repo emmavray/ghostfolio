@@ -4,7 +4,6 @@ build:
   commands:
     build:
       - yum install -y docker
-      - service docker start
       - docker compose --env-file ./.env -f docker/docker-compose.build.yml build
 
 run:
