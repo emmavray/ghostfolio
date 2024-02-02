@@ -8,4 +8,6 @@ build:
       - docker compose --env-file ./.env -f docker/docker-compose.build.yml build
 
 run:
+  network:
+    port: 3333
   command: docker compose --env-file ./.env -f docker/docker-compose.build.yml up -d
